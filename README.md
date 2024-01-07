@@ -3,22 +3,29 @@
 ## Prerequisite
 Make sure you install docker, nvm in your local environment. Switch your node version to 16.  
 
-Follow the [instruction](https://support.google.com/accounts/answer/185833?hl=en) to get your app password and replace the `EMAIL_PWD` on `skill-test/backend/.env`
+Follow the [instruction](https://support.google.com/accounts/answer/185833?hl=en) to get your app password and replace the `EMAIL_USER` & `EMAIL_PWD` on `skill-test/backend/.env`
 
 ## Initialization
-1. Start the db via docker 
+1. Install packages
 ```bash
-skill-test $ cd backend/src/db
+skill-test $ npm i
+skill-test $ cd backend
+skill-test/backend $ npm i
+```
+
+2. Start the db via docker 
+```bash
+skill-test/backend $ cd src/db
 skill-test/backend/src/db $ docker compose up
 ```
 
-2. Insert mock data into db  
-2.1 Open the browser and navigate to localhost:8080  
-2.2 Login to MySQL (account info is in docker-compose.yml)  
-2.3 Copy the sql script on skill-test/backend/src/db/new_mgldefi.sql and paste on MySQL gui to insert mock data  
+3. Insert mock data into db  
+3.1 Open the browser and navigate to localhost:8080  
+3.2 Login to MySQL (account info is in docker-compose.yml)  
+3.3 Copy the sql script on `skill-test/backend/src/db/new_mgldefi.sql` and paste on MySQL gui to insert mock data  
 
-3. Start frontend and backend server  
-3.1 Open a new terminal and execute the following command
+4. Start frontend and backend server  
+4.1 Open a new terminal and execute the following command
 ```bash
 skill-test $ npm run dev
 ```
